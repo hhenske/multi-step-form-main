@@ -1,35 +1,61 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.jsx
+// src/App.jsx
+import MultiStepForm from './components/MultiStepForm';
+import './App.css';
+import './styles.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="content-container">
+      {/* Mobile background image */}
+      <img
+        src="assets/images/bg-sidebar-mobile.svg"
+        id="mobile-background-image"
+        alt="Mobile Sidebar"
+      />
+
+      {/* Mobile step group */}
+      <div className="step-group-mobile">
+        <div className="step-circle active">1</div>
+        <div className="step-circle">2</div>
+        <div className="step-circle">3</div>
+        <div className="step-circle">4</div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      {/* Card container */}
+      <div className="container-card">
+        {/* Desktop background image */}
+        <img
+          src="assets/images/bg-sidebar-desktop.svg"
+          id="desktop-background-image"
+          alt="Desktop Sidebar"
+        />
+
+        {/* Step group over background image */}
+        <div className="background-image">
+          <div className="step-group">
+            <div className="step-item active">
+              <div className="step-circle">1</div>
+              <div className="step-info">
+                <div className="step-label">Step 1</div>
+                <div className="step-description">Your Info</div>
+              </div>
+            </div>
+
+            {/* Repeat for steps 2–4 if you want */}
+          </div>
+        </div>
+
+        {/* Form component */}
+        <MultiStepForm />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      {/* Navigation buttons */}
+      <div className="btn-group">
+        {/* Buttons will go here */}
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
