@@ -4,36 +4,39 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
     <title>Vite + React</title>
   </head>
   <body>
     <div id="root">
-      <div className="content-container">
-        <div className="container-card">
-          <div className="background-image">
-            <div className="step-group">
-              <div className="step-numbers">
+      <div class="content-container">
+        <img src="assets/images/bg-sidebar-mobile.svg" id="mobile-background-image" />
+        <div class="container-card">
+          <img src="assets/images/bg-sidebar-desktop.svg" id="desktop-background-image" />
+          <div class="background-image">
+            <div clas="step-group">
+              <div class="step-numbers">
                 <!-- numbers in circles -->
               </div>
-              <div className="step-info">
-                <div className="step-label">
+              <div class="step-info">
+                <div class="step-label">
                   <!-- step number label -->
                 </div>
-                <div className="step-description">
+                <div class="step-description">
                   <!-- step description -->
                 </div>
               </div>
             </div>
           </div>
-          <div className="step-container">
-            <div className="step-title"></div>
-            <div className="step-description"></div>
-            <div className="step-content">
+          <div class="step-container">
+            <div class="step-title"></div>
+            <div class="step-description"></div>
+            <div class="step-content">
               <!-- dynamically rendered from components -->
             </div>
           </div>
         </div>
-        <div className="btn-group">
+        <div class="btn-group">
           <!-- buttons -->
         </div>
       </div>

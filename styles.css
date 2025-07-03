@@ -10,3 +10,90 @@
     --white:  hsl(0, 100%, 100%);
     --red-500: hsl(354, 84%, 57%);
 }
+
+html, body, #root {
+    background-color: var(--white);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  justify-content: center; /* centers horizontally */
+  align-items: center;
+}
+
+
+.content-container {
+  background-color: var(--blue-100);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;     
+  padding: 12px;
+}
+
+
+.container-card {
+  display: flex;
+  background-color: var(--white);
+  border-radius: 12px;
+  max-width: 900px;
+  height: 500px;
+  width: 100%;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* Ensures image stays inside card */
+}
+
+#mobile-background-image {
+    display: none;
+}
+
+/* Align image to far left */
+#desktop-background-image {
+  display: block;
+  width: 275px; /* Adjust based on your design */
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  align-self: flex-start; /* Ensure it's aligned to top */
+}
+
+@media (max-width: 1000px) {
+    .container-card {
+        max-width:700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        max-width: 320px;
+        height: 650px;
+        position: relative;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .container-card {
+        margin: 15px;
+        margin-top: 22px;
+        position: relative;
+        z-index: 1;
+    }
+
+   
+    #mobile-background-image {
+        display: block;
+        /* max-width: 320px; */
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+
+    #desktop-background-image {
+        display: none;
+    }
+}
