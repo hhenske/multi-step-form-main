@@ -5,29 +5,66 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <title>Vite + React</title>
   </head>
   <body>
     <div id="root">
       <div class="content-container">
         <img src="assets/images/bg-sidebar-mobile.svg" id="mobile-background-image" />
+
+        <div class="step-group-mobile">
+          <div class="step-circle active">1</div>
+          <div class="step-circle">2</div>
+          <div class="step-circle">3</div>
+          <div class="step-circle">4</div>
+        </div>
+
         <div class="container-card">
           <img src="assets/images/bg-sidebar-desktop.svg" id="desktop-background-image" />
           <div class="background-image">
-            <div clas="step-group">
-              <div class="step-numbers">
-                <!-- numbers in circles -->
-              </div>
-              <div class="step-info">
-                <div class="step-label">
-                  <!-- step number label -->
+             <div class="step-group">
+              <!-- STEP 1 -->
+              <div class="step-item active">
+                <div class="step-circle">1</div>
+                <div class="step-info">
+                  <div class="step-label">Step 1</div>
+                  <div class="step-description">Your Info</div>
                 </div>
-                <div class="step-description">
-                  <!-- step description -->
+              </div>
+
+              <!-- STEP 2 -->
+              <div class="step-item">
+                <div class="step-circle">2</div>
+                <div class="step-info">
+                  <div class="step-label">Step 2</div>
+                  <div class="step-description">Select Plan</div>
+                </div>
+              </div>
+
+              <!-- STEP 3 -->
+              <div class="step-item">
+                <div class="step-circle">3</div>
+                <div class="step-info">
+                  <div class="step-label">Step 3</div>
+                  <div class="step-description">Add-Ons</div>
+                </div>
+              </div>
+
+              <!-- STEP 4 -->
+              <div class="step-item">
+                <div class="step-circle">4</div>
+                <div class="step-info">
+                  <div class="step-label">Step 4</div>
+                  <div class="step-description">Summary</div>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Step content area -->
           <div class="step-container">
             <div class="step-title"></div>
             <div class="step-description"></div>
@@ -36,11 +73,14 @@
             </div>
           </div>
         </div>
-        <div class="btn-group">
-          <!-- buttons -->
-        </div>
+
+      <!-- Buttons -->
+      <div class="btn-group">
+        <!-- buttons go here -->
       </div>
     </div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  </div>
+
+  <script type="module" src="/src/main.jsx"></script>
+</body>
 </html>
