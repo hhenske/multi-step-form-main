@@ -1,7 +1,6 @@
 // src/App.jsx
 import { useState } from 'react';
 import MultiStepForm from './components/MultiStepForm';
-import './App.css';
 import '/styles.css';
 
 function App() {

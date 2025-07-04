@@ -3,6 +3,7 @@ import StepTwo from './steps/StepTwo';
 import StepThree from './steps/StepThree';
 import StepFour from './steps/StepFour';
 import StepFive from './steps/StepFive';
+import '/styles.css'; 
 
 const steps = [
     {
@@ -50,8 +51,8 @@ export default function MultiStepForm({ currentStep, setCurrentStep }) {
             setCurrentStep((prev) => prev - 1);
         }
     }
+    console.log(currentStep);
 
-    
     return (
     <div className="step-container">
       {/* Step title and description */}
@@ -60,7 +61,7 @@ export default function MultiStepForm({ currentStep, setCurrentStep }) {
 
       {/* Step content */}
       <div className="step-content">{component}</div>
-
+      
       {/* Navigation Buttons */}
       {!isLastStep && (
         <div className="btn-group">

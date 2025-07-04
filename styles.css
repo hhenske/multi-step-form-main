@@ -36,17 +36,23 @@ html, body, #root {
 
 .container-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   position: relative;
   background-color: var(--white);
+  gap: 55px;
   border-radius: 12px;
   max-width: 900px;
-  height: 500px;
+  height: auto;
   width: 100%;
   margin: 0 auto;
   padding: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-  overflow: hidden; /* Ensures image stays inside card */
+  overflow: visible; /* Ensures image stays inside card */
+}
+
+h1 {
+    color: var(--blue-950);
+    margin: 0;
 }
 
 #mobile-background-image {
@@ -68,7 +74,7 @@ html, body, #root {
   position: absolute;
   top: 0;
   left: 0;
-  width: 275px;
+  width: 250px;
   height: 100%;
   display: flex;
   align-items: flex-start;
@@ -80,9 +86,18 @@ html, body, #root {
 .step-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* pushes buttons to bottom */
+  justify-content: space-between;
+  gap: 1rem;
   height: 100%;
   flex: 1;
+  padding: 30px;
+}
+
+.step-content {
+  flex: 1;
+  overflow-y: auto;
+  /* background: #e0ffe0;  */
+  margin-top: 0;
 }
 
 
@@ -134,23 +149,27 @@ html, body, #root {
 
 .step-label {
     font-size: 14px;
-    color: var(--blue-300);
+    color: var(--grey-500);
     text-transform: uppercase;
 }
 
 .step-description {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--white);
     border: none;
+    margin-top: 0;
 }
 
 .btn-group {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    padding: 1.5rem;
+    width: 95%;
+    padding: 1.5rem 0 0 0;
     margin-top: auto;
+    /* background: red; */
+
+   
 }
 
 .btn-back {
@@ -171,6 +190,9 @@ html, body, #root {
     font-weight: 500;
     font-size: 16px;
     cursor: pointer;
+    width: 120px;
+    height: 50px;
+    border-radius: 8px;
 }
 
 .btn-next.confirm {
@@ -262,5 +284,9 @@ html, body, #root {
         display: flex;
         justify-content: space-between;
         z-index: 30;
+    }
+
+    .btn-next {
+        margin-right: 40px;
     }
 }
