@@ -1,32 +1,45 @@
 // src/App.jsx
-// src/App.jsx
+import { useState } from 'react';
 import MultiStepForm from './components/MultiStepForm';
 import './App.css';
-import './styles.css';
+import '/styles.css';
 
 function App() {
+  const [currentStep, setCurrentStep] = useState(0);
+
+  const stepLabels = [
+    { label: 'Step 1', description: 'Your Info' },
+    { label: 'Step 2', description: 'Select Plan' },
+    { label: 'Step 3', description: 'Add-Ons' },
+    { label: 'Step 4', description: 'Summary' },
+  ];
+
   return (
     <div className="content-container">
       {/* Mobile background image */}
       <img
-        src="assets/images/bg-sidebar-mobile.svg"
+        src="/assets/images/bg-sidebar-mobile.svg"
         id="mobile-background-image"
         alt="Mobile Sidebar"
       />
 
       {/* Mobile step group */}
       <div className="step-group-mobile">
-        <div className="step-circle active">1</div>
-        <div className="step-circle">2</div>
-        <div className="step-circle">3</div>
-        <div className="step-circle">4</div>
+        {stepLabels.map((_, index) => (
+          <div
+            key={index}
+            className={`step-circle ${index === currentStep ? 'active' : ''}`}
+          >
+            {index + 1}
+          </div>
+        ))}
       </div>
 
       {/* Card container */}
       <div className="container-card">
         {/* Desktop background image */}
         <img
-          src="assets/images/bg-sidebar-desktop.svg"
+          src="/assets/images/bg-sidebar-desktop.svg"
           id="desktop-background-image"
           alt="Desktop Sidebar"
         />
@@ -34,25 +47,26 @@ function App() {
         {/* Step group over background image */}
         <div className="background-image">
           <div className="step-group">
-            <div className="step-item active">
-              <div className="step-circle">1</div>
-              <div className="step-info">
-                <div className="step-label">Step 1</div>
-                <div className="step-description">Your Info</div>
+            {stepLabels.map((step, index) => (
+              <div
+                key={index}
+                className={`step-item ${index === currentStep ? 'active' : ''}`}
+              >
+                <div className="step-circle">{index + 1}</div>
+                <div className="step-info">
+                  <div className="step-label">{step.label}</div>
+                  <div className="step-description">{step.description}</div>
+                </div>
               </div>
-            </div>
-
-            {/* Repeat for steps 2–4 if you want */}
+            ))}
           </div>
         </div>
 
         {/* Form component */}
-        <MultiStepForm />
-      </div>
-
-      {/* Navigation buttons */}
-      <div className="btn-group">
-        {/* Buttons will go here */}
+        <MultiStepForm
+          currentStep={currentStep}
+          setCurrentStep={setCurrentStep}
+        />
       </div>
     </div>
   );
